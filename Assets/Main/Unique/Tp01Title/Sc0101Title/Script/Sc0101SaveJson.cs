@@ -14,9 +14,4 @@ public class Sc0101SaveJson : MonoBehaviour
 
         Debug.Log(coinsCount.stage1);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
 }
