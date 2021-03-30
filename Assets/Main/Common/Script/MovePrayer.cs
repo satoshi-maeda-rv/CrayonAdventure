@@ -16,7 +16,12 @@ public class MovePrayer : MonoBehaviour
     // ジャンプ可能かどうかの判定
     public int jumpCount = -1;
 
+    // ジャンプするクラス
     Jump jumpClass = new Jump();
+
+    // 重力方向
+    // 0下、1右、2上、3左
+    public int gravityDirection = 0;
 
     // 操作キャラか判定
     public bool Player;
@@ -26,8 +31,6 @@ public class MovePrayer : MonoBehaviour
 
     // ジャンプできるカウント数
     private int canJumpCount = 5;
-
-    public float canJumpHight = 4f;
 
     // 初期化
     void Start()
@@ -39,59 +42,53 @@ public class MovePrayer : MonoBehaviour
     // 更新時に実行
     void Update()
     {
+        // Zボタンでキャラの変更
         if (Input.GetKeyUp(KeyCode.Z))
         {
             Player = !Player;
         }
 
-        if (Mathf.Abs(rb.velocity.y) < 0.00001 && jumpCount < canJumpCount)
+        // 跳躍中ではないときにジャンプできる数値を回復する
+        if (Mathf.Abs(rb.velocity.y) < 0.01 && jumpCount < canJumpCount)
         {
             jumpCount += 1;
         }
 
+        // もしもプレイヤーだったら動かせるように
         if (Player)
         {
-            // 現在のX軸速度
-            float velocityX = rb.velocity.x;
+            // 押した矢印の方向を記憶する
+            float pushArrowDirection = 0.0f;
 
-            //右入力で右向きに動く
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                // 速度が最高速度ではない場合
-                if (velocityX < maxSpeed)
-                {
-                    // 初速はつける
-                    if (velocityX == 0)
-                    {
-                        rb.velocity = new Vector2(1.0f, rb.velocity.y);
-                    }
-                    rb.velocity =
-                        new Vector2(rb.velocity.x + addSpeed, rb.velocity.y);
-                }
-            } // 左ボタンを押したら左に動く
+                pushArrowDirection = 1.0f;
+            }
             else if (Input.GetKey(KeyCode.LeftArrow))
             {
-                // 速度が最高速度ではない場合
-                if (velocityX > -maxSpeed)
-                {
-                    // 初速はつける
-                    if (velocityX == 0)
-                    {
-                        rb.velocity = new Vector2(-1.0f, rb.velocity.y);
-                    }
-                    rb.velocity =
-                        new Vector2(rb.velocity.x - addSpeed, rb.velocity.y);
-                }
+                pushArrowDirection = -1.0f;
             }
             else
-            //ボタンを離すと止まる
             {
-                rb.velocity = new Vector2(0, rb.velocity.y);
+                pushArrowDirection = 0;
             }
+
+            // 押下矢印によってキャラの移動
+            MoveCharaArrowPush
+                .GetInstance()
+                .moveChara(rb,
+                gravityDirection,
+                pushArrowDirection,
+                maxSpeed,
+                addSpeed);
 
             jumpCount =
                 jumpClass
-                    .tapJumpButton(rb, jumpCount, jumpAddSpeed, canJumpCount);
+                    .tapJumpButton(rb,
+                    gravityDirection,
+                    jumpCount,
+                    jumpAddSpeed,
+                    canJumpCount);
         }
     }
 }

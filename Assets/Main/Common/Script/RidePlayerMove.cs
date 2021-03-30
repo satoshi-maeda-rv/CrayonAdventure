@@ -39,13 +39,13 @@ public class RidePlayerMove : MonoBehaviour
         {
             rbWide.velocity = new Vector2(rbTall.velocity.x, rbWide.velocity.y);
 
-            int jumpCount = jumpClass.tapJumpButton(rbWide, 5, jumpAddSpeed, 5);
+            // int jumpCount = jumpClass.tapJumpButton(rbWide, 5, jumpAddSpeed, 5);
         }
         else if (objName == "tall" && !tallScript.Player)
         {
             rbTall.velocity = new Vector2(rbWide.velocity.x, rbTall.velocity.y);
 
-            int jumpCount = jumpClass.tapJumpButton(rbTall, 5, jumpAddSpeed, 5);
+            // int jumpCount = jumpClass.tapJumpButton(rbTall, 5, jumpAddSpeed, 5);
         }
     }
 }
