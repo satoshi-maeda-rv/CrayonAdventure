@@ -38,7 +38,7 @@ public class MovePrayer : MonoBehaviour
     private Rigidbody2D rb;
 
     // ジャンプできるカウント数
-    private int canJumpCount = 5;
+    private int canJumpCount = 2;
 
     // 初期化
     void Start()
