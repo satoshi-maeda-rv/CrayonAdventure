@@ -7,7 +7,6 @@ TagManager:
   - wide
   - TopCollider
   - player
-  - bottomCollider
   layers:
   - Default
   - TransparentFX

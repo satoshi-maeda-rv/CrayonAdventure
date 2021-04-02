@@ -6,6 +6,11 @@ using UnityEngine;
 [System.Serializable]
 class SaveLoadGetCoinsCount
 {
+    public static SaveLoadGetCoinsCount GetInstance()
+    {
+        return new SaveLoadGetCoinsCount();
+    }
+
     public void saveStage1(int coinsCount)
     {
         PlayerPrefs.SetInt("stage1", coinsCount);

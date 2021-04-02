@@ -15,11 +15,26 @@ public class MoveCharaArrowPush
         // 重力方向
         // 0下、1右、2上、3左
         int gravityDirection,
-        float pushArrowDirection,
         float maxSpeed,
         float addSpeed
     )
     {
+        // 押した矢印の方向を記憶する
+        float pushArrowDirection = 0.0f;
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            pushArrowDirection = 1.0f;
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            pushArrowDirection = -1.0f;
+        }
+        else
+        {
+            pushArrowDirection = 0;
+        }
+
         // X軸速度
         float velocityX = rb.velocity.x;
 

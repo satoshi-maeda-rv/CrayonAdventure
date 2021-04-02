@@ -4,28 +4,30 @@ using UnityEngine;
 
 public class PlayerBottomCollider : MonoBehaviour
 {
+    // 乗ったプレイヤー
     GameObject ridePlayerMover;
 
+    // 乗ったプレイヤーのスクリプト
     RidePlayerMove script;
 
     void Start()
     {
+        // 乗った時に動作する物の名称を入れておく
         ridePlayerMover = GameObject.Find("RidePlayerMover");
         script = ridePlayerMover.GetComponent<RidePlayerMove>();
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if (col.gameObject.tag == "bottomCollider")
+        if (collider.gameObject.name == "BottomCollider")
         {
-            Debug.Log(col.transform.parent.gameObject.name);
-            script.objName = col.transform.parent.gameObject.name;
+            script.objName = collider.transform.parent.gameObject.name;
         }
     }
 
-    void OnTriggerExit2D(Collider2D col)
+    void OnTriggerExit2D(Collider2D collider)
     {
-        if (col.gameObject.tag == "bottomCollider")
+        if (collider.gameObject.name == "BottomCollider")
         {
             script.objName = "none";
         }

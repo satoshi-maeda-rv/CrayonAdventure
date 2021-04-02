@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// 重力を右に変更
-public class ChangeGravityRight : MonoBehaviour
+// 重力を下に変更
+public class ChangeGravityDown : MonoBehaviour
 {
     // ワイド君取得
     GameObject wide;
@@ -25,8 +25,8 @@ public class ChangeGravityRight : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        wideScript.gravityDirection = 1;
-        tallScript.gravityDirection = 1;
+        wideScript.gravityDirection = 0;
+        tallScript.gravityDirection = 0;
 
         Physics2D.gravity = new Vector2(0.0f, 0.0f);
 

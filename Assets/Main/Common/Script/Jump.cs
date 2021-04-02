@@ -51,29 +51,32 @@ public class Jump
             switch (gravityDirection)
             {
                 case 0:
+                    // 重力下向き
                     if (rb.velocity.y > 0)
                     {
                         rb.velocity = new Vector2(velocityX, velocityY / 3);
                     }
                     break;
                 case 1:
+                    // 重力右向き
                     if (rb.velocity.x < 0)
                     {
                         rb.velocity = new Vector2(velocityX / 3, velocityY);
                     }
                     break;
                 case 2:
+                    // 重力上向き
                     if (rb.velocity.y < 0)
                     {
                         rb.velocity = new Vector2(velocityX, velocityY / 3);
                     }
                     break;
                 case 3:
+                    // 重力左向き
                     if (rb.velocity.x > 0)
                     {
                         rb.velocity = new Vector2(velocityX / 3, velocityY);
                     }
-                    break;
                     break;
                 default:
                     break;

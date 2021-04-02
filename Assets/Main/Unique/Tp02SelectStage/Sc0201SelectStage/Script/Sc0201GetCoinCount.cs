@@ -24,7 +24,10 @@ public class Sc0201GetCoinCount : MonoBehaviour
             sum += getCoin;
         }
 
-        int progressCoins = sum / total * 100;
+        // floatで進行度を計算
+        float floatProgressCoins = (float) sum / (float) total * 100f;
+
+        int progressCoins = (int) floatProgressCoins;
 
         Text progressText = progress.GetComponent<Text>();
 
