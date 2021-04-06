@@ -48,7 +48,7 @@ public class MovePrayer : MonoBehaviour
     }
 
     // 更新時に実行
-    void Update()
+    void FixedUpdate()
     {
         // Zボタンでキャラの変更
         if (Input.GetKeyUp(KeyCode.Z))

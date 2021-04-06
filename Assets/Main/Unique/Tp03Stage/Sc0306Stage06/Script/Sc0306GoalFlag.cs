@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GoalFlag : MonoBehaviour
+public class Sc0306GoalFlag : MonoBehaviour
 {
     // コイン取得数
     public int coinsCount;
@@ -27,7 +27,7 @@ public class GoalFlag : MonoBehaviour
                 if (firstGoalCharaName == nameTall)
                 {
                     Debug.Log (coinsCount);
-                    SaveLoadGetCoinsCount.GetInstance().saveStage1(coinsCount);
+                    SaveLoadGetCoinsCount.GetInstance().saveStage6(coinsCount);
                     SceneManager.LoadScene("Sc0201SelectStageScene");
                 }
                 else
@@ -41,7 +41,7 @@ public class GoalFlag : MonoBehaviour
                 if (firstGoalCharaName == nameWide)
                 {
                     Debug.Log (coinsCount);
-                    SaveLoadGetCoinsCount.GetInstance().saveStage1(coinsCount);
+                    SaveLoadGetCoinsCount.GetInstance().saveStage6(coinsCount);
                     SceneManager.LoadScene("Sc0201SelectStageScene");
                 }
                 else

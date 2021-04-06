@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GetCoin : MonoBehaviour
+public class Sc0301GetCoin : MonoBehaviour
 {
     // 旗と旗のスクリプト取得
     GameObject flag;
 
-    GoalFlag goalFlagScript;
+    Sc0301GoalFlag goalFlagScript;
 
     //起動
     void Start()
     {
         flag = GameObject.Find("Flag");
-        goalFlagScript = flag.GetComponent<GoalFlag>();
+        goalFlagScript = flag.GetComponent<Sc0301GoalFlag>();
     }
 
     void OnTriggerEnter2D(Collider2D collider)

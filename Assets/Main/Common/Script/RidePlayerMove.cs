@@ -23,13 +23,8 @@ public class RidePlayerMove : MonoBehaviour
     // トールのスクリプト
     MovePrayer tallScript;
 
-    // 跳躍時加算する加速度
-    public float jumpAddSpeed;
-
     // 上に乗ったオブジェクト名
     public string objName;
-
-    Jump jumpClass = new Jump();
 
     void Start()
     {
@@ -42,31 +37,15 @@ public class RidePlayerMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (objName == "wide" && !wideScript.Player)
         {
             rbWide.velocity = new Vector2(rbTall.velocity.x, rbTall.velocity.y);
-
-            int jumpCount =
-                jumpClass
-                    .tapJumpButton(rbWide,
-                    wideScript.gravityDirection,
-                    5,
-                    jumpAddSpeed,
-                    5);
         }
         else if (objName == "tall" && !tallScript.Player)
         {
             rbTall.velocity = new Vector2(rbWide.velocity.x, rbWide.velocity.y);
-
-            int jumpCount =
-                jumpClass
-                    .tapJumpButton(rbTall,
-                    tallScript.gravityDirection,
-                    5,
-                    jumpAddSpeed,
-                    5);
         }
     }
 }
