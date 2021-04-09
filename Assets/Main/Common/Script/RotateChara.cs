@@ -17,7 +17,8 @@ public class RotateChara
         return new RotateChara();
     }
 
-    public void moveChara(
+    public bool
+    moveChara(
         GameObject obj,
         Rigidbody2D rb,
         // 重力方向
@@ -39,6 +40,7 @@ public class RotateChara
                         Quaternion.AngleAxis(1, new Vector3(0.0f, 0.0f, 5.0f));
 
                     rb.velocity = new Vector2(0.0f, 0.0f);
+                    return false;
                 }
                 else
                 // 回転終了時
@@ -63,6 +65,7 @@ public class RotateChara
                         Quaternion.AngleAxis(1, new Vector3(0.0f, 0.0f, 5.0f));
 
                     rb.velocity = new Vector2(0.0f, 0.0f);
+                    return false;
                 }
                 else
                 // 回転終了時
@@ -86,6 +89,7 @@ public class RotateChara
                         Quaternion.AngleAxis(1, new Vector3(0.0f, 0.0f, 5.0f));
 
                     rb.velocity = new Vector2(0.0f, 0.0f);
+                    return false;
                 }
                 else
                 // 回転終了時
@@ -110,6 +114,7 @@ public class RotateChara
                         Quaternion.AngleAxis(1, new Vector3(0.0f, 0.0f, 5.0f));
 
                     rb.velocity = new Vector2(0.0f, 0.0f);
+                    return false;
                 }
                 else
                 // 回転終了時
@@ -125,5 +130,6 @@ public class RotateChara
             default:
                 break;
         }
+        return true;
     }
 }

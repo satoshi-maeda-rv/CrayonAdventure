@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class MovePrayer : MonoBehaviour
 {
-    public enum GravityDirection
-    {
-        down = 0,
-        right = 1,
-        up = 2,
-        left = 3
-    }
-
     // 最高速度
     public float maxSpeed;
 
@@ -48,7 +40,7 @@ public class MovePrayer : MonoBehaviour
     }
 
     // 更新時に実行
-    void FixedUpdate()
+    void Update()
     {
         // Zボタンでキャラの変更
         if (Input.GetKeyUp(KeyCode.Z))
@@ -56,44 +48,48 @@ public class MovePrayer : MonoBehaviour
             Player = !Player;
         }
 
-        RotateChara
-            .GetInstance()
-            .moveChara(this.gameObject, rb, gravityDirection);
-
-        // 跳躍中ではないときにジャンプできる数値を回復する
-        if (
-            (gravityDirection == 0 || gravityDirection == 2) &&
-            Mathf.Abs(rb.velocity.y) < 0.01 &&
-            jumpCount < canJumpCount
-        )
-        {
-            jumpCount += 1;
-        }
-        else if (
-            (gravityDirection == 1 || gravityDirection == 3) &&
-            Mathf.Abs(rb.velocity.x) < 0.01 &&
-            jumpCount < canJumpCount
-        )
-        {
-            jumpCount += 1;
-        }
-
-        // もしもプレイヤーだったら動かせるように
-        if (Player)
-        {
-            // 押下矢印によってキャラの移動
-            MoveCharaArrowPush
+        bool isMove =
+            RotateChara
                 .GetInstance()
-                .moveChara(rb, gravityDirection, maxSpeed, addSpeed);
+                .moveChara(this.gameObject, rb, gravityDirection);
 
-            // ジャンプ実行
-            jumpCount =
-                jumpClass
-                    .tapJumpButton(rb,
-                    gravityDirection,
-                    jumpCount,
-                    jumpAddSpeed,
-                    canJumpCount);
+        if (isMove)
+        {
+            // 跳躍中ではないときにジャンプできる数値を回復する
+            if (
+                (gravityDirection == 0 || gravityDirection == 2) &&
+                Mathf.Abs(rb.velocity.y) < 0.01 &&
+                jumpCount < canJumpCount
+            )
+            {
+                jumpCount += 1;
+            }
+            else if (
+                (gravityDirection == 1 || gravityDirection == 3) &&
+                Mathf.Abs(rb.velocity.x) < 0.01 &&
+                jumpCount < canJumpCount
+            )
+            {
+                jumpCount += 1;
+            }
+
+            // もしもプレイヤーだったら動かせるように
+            if (Player)
+            {
+                // 押下矢印によってキャラの移動
+                MoveCharaArrowPush
+                    .GetInstance()
+                    .moveChara(rb, gravityDirection, maxSpeed, addSpeed);
+
+                // ジャンプ実行
+                jumpCount =
+                    jumpClass
+                        .tapJumpButton(rb,
+                        gravityDirection,
+                        jumpCount,
+                        jumpAddSpeed,
+                        canJumpCount);
+            }
         }
     }
 }
