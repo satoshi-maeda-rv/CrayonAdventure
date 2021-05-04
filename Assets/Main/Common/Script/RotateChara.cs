@@ -37,7 +37,7 @@ public class RotateChara
                 {
                     // どう回転するにしても左回転
                     obj.transform.rotation *=
-                        Quaternion.AngleAxis(1, new Vector3(0.0f, 0.0f, 5.0f));
+                        Quaternion.AngleAxis(2, new Vector3(0.0f, 0.0f, 5.0f));
 
                     rb.velocity = new Vector2(0.0f, 0.0f);
                     return false;
@@ -62,7 +62,7 @@ public class RotateChara
                 {
                     // どう回転するにしても左回転
                     obj.transform.rotation *=
-                        Quaternion.AngleAxis(1, new Vector3(0.0f, 0.0f, 5.0f));
+                        Quaternion.AngleAxis(2, new Vector3(0.0f, 0.0f, 5.0f));
 
                     rb.velocity = new Vector2(0.0f, 0.0f);
                     return false;
@@ -86,7 +86,7 @@ public class RotateChara
                 {
                     // どう回転するにしても左回転
                     obj.transform.rotation *=
-                        Quaternion.AngleAxis(1, new Vector3(0.0f, 0.0f, 5.0f));
+                        Quaternion.AngleAxis(2, new Vector3(0.0f, 0.0f, 5.0f));
 
                     rb.velocity = new Vector2(0.0f, 0.0f);
                     return false;
@@ -111,7 +111,7 @@ public class RotateChara
                 {
                     // どう回転するにしても左回転
                     obj.transform.rotation *=
-                        Quaternion.AngleAxis(1, new Vector3(0.0f, 0.0f, 5.0f));
+                        Quaternion.AngleAxis(2, new Vector3(0.0f, 0.0f, 5.0f));
 
                     rb.velocity = new Vector2(0.0f, 0.0f);
                     return false;

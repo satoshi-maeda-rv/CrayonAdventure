@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 453938440}
   - component: {fileID: 453938442}
   m_Layer: 0
-  m_Name: Sc0301Stage01Scene
+  m_Name: Sc0302Stage02Scene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -832,7 +832,7 @@ GameObject:
   - component: {fileID: 1175578590}
   - component: {fileID: 1175578592}
   m_Layer: 0
-  m_Name: Sc0303Stage03Scene
+  m_Name: Sc0304Stage04Scene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1167,7 +1167,7 @@ GameObject:
   - component: {fileID: 1804352064}
   - component: {fileID: 1804352066}
   m_Layer: 0
-  m_Name: Sc0307Stage07Scene
+  m_Name: Sc0301Stage01Scene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1275,7 +1275,7 @@ GameObject:
   - component: {fileID: 1858897080}
   - component: {fileID: 1858897082}
   m_Layer: 0
-  m_Name: Sc0302Stage02Scene
+  m_Name: Sc0303Stage03Scene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

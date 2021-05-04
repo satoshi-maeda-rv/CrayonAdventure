@@ -125,6 +125,8 @@ MonoBehaviour:
   jumpCount: -1
   gravityDirection: 0
   Player: 0
+  frictionMaterial: {fileID: 6200000, guid: 1ea955942b9d2b3479862fd8cf48dd16, type: 2}
+  unFrictionMaterial: {fileID: 6200000, guid: bd002290119ce6d42b30bd4503e78742, type: 2}
 --- !u!1 &5641400958553497655
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +241,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.015}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -250,7 +252,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.95, y: 0.93}
+  m_Size: {x: 2.92, y: 0.93}
   m_EdgeRadius: 0
 --- !u!1 &5641400959077592030
 GameObject:

@@ -31,12 +31,20 @@ public class MovePrayer : MonoBehaviour
 
     // ジャンプできるカウント数
     private int canJumpCount = 2;
+    // プレイヤーのボトムコライダー
+    Collider2D bottmCollider;
+
+    // 摩擦ありマテリアル
+    public PhysicsMaterial2D frictionMaterial;
+    // 摩擦なしマテリアル
+    public PhysicsMaterial2D unFrictionMaterial;
 
     // 初期化
     void Start()
     {
         // オブジェクトのrigidbodyの取得
         rb = GetComponent<Rigidbody2D>();
+        bottmCollider = transform.Find("BottomCollider").gameObject.GetComponent<Collider2D>();
     }
 
     // 更新時に実行
@@ -48,6 +56,7 @@ public class MovePrayer : MonoBehaviour
             Player = !Player;
         }
 
+        // 回転中かどうかの判定
         bool isMove =
             RotateChara
                 .GetInstance()
@@ -89,6 +98,11 @@ public class MovePrayer : MonoBehaviour
                         jumpCount,
                         jumpAddSpeed,
                         canJumpCount);
+                // 摩擦をなくす
+                bottmCollider.sharedMaterial = unFrictionMaterial;
+            }else {
+                // 摩擦を戻す
+                bottmCollider.sharedMaterial = frictionMaterial;
             }
         }
     }

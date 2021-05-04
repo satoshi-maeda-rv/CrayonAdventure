@@ -270,7 +270,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 228762722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bc1923d41835624daa81d58f1b83cc4, type: 3}
+  m_Script: {fileID: 11500000, guid: c33f77c074c3fc847ba55fb03c0c763b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!58 &228762724
@@ -2207,7 +2207,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1056207947}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21dc040874182b84f8020bec28ef89cf, type: 3}
+  m_Script: {fileID: 11500000, guid: ceee2cecbfcf8224b98723dc3817a8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1302273731 stripped
@@ -4293,7 +4293,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1993783971}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bc1923d41835624daa81d58f1b83cc4, type: 3}
+  m_Script: {fileID: 11500000, guid: c33f77c074c3fc847ba55fb03c0c763b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!58 &1993783973
@@ -4524,6 +4524,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b93b90af7660a50449bee74737647837, type: 3}
+--- !u!1 &3247720404239985535 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3677180517180554287, guid: b93b90af7660a50449bee74737647837,
+    type: 3}
+  m_PrefabInstance: {fileID: 3247720404239985534}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3247720404239985536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3247720404239985535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2e71cda127ba341ae17725547a1dda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinsCount: 0
+  firstGoalCharaName: none
 --- !u!1001 &3577786618597422842
 PrefabInstance:
   m_ObjectHideFlags: 0

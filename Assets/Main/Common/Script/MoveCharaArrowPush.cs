@@ -106,7 +106,7 @@ public class MoveCharaArrowPush
                         }
                         rb.velocity =
                             new Vector2(velocityX +
-                                -addSpeed * pushArrowDirection,
+                                addSpeed * pushArrowDirection,
                                 velocityY);
                     }
                     break;
